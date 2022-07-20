@@ -16,6 +16,11 @@
 # Add a feed source
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+
+echo 'src-git weifuture https://github.com/hongweifuture/openwrt-packages' >>feeds.conf.default
+echo 'src-git pwdep https://github.com/hongweifuture/pwdep.git' >>feeds.conf.default
+
+
 sed -i '/spi-max-frequency/a\\t\tbroken-flash-reset;' target/linux/ramips/dts/mt7621_phicomm_k2p.dts
 sed -i 's/<0xa0000 0xf60000>/<0xa0000 0x1fb0000>/g' target/linux/ramips/dts/mt7621_phicomm_k2p.dts
 sed -i 's/15744k/32448k/g' target/linux/ramips/image/mt7621.mk
